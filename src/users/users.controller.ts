@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Delete, UseGuards, Req } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Delete,
+  UseGuards,
+  Req,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { AccessTGuard } from '../auth/guard/At.guard';
 import { ApiSecurity } from '@nestjs/swagger';
@@ -44,9 +53,8 @@ export class UsersController {
   @ApiSecurity('jwt-auth')
   @UseGuards(AccessTGuard)
   @Post('logout')
-  logout(@Req() req: any){
+  logout(@Req() req: any) {
     const id = req.user['id'];
     return this.usersService.logout(id);
   }
-
 }

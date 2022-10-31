@@ -6,7 +6,7 @@ import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({isGlobal: true}),
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.HOST,
@@ -15,10 +15,9 @@ import { UsersModule } from './users/users.module';
       password: 'hello',
       database: process.env.DATABASE,
       entities: [User],
-      synchronize: true
+      synchronize: true,
     }),
     UsersModule,
   ],
 })
-
 export class AppModule {}

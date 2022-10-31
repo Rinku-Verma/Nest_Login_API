@@ -16,6 +16,6 @@ import { UsersLocalController } from './users.local.controller';
     JwtModule,
   ],
   controllers: [UsersController, UsersLocalController],
-  providers: [UsersService, AtStrategy, RtStrategy]
+  providers: [UsersService, AtStrategy, RtStrategy],
 })
 export class UsersModule {}
